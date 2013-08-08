@@ -1,0 +1,9 @@
+[submodule "modules/apache"]
+	path = modules/apache
+	url = https://github.com/md-systems/puppetlabs-apache.git
+[submodule "modules/stdlib"]
+	path = modules/stdlib
+	url = https://github.com/puppetlabs/puppetlabs-stdlib.git
+[submodule "modules/concat"]
+	path = modules/concat
+	url = https://github.com/puppetlabs/puppetlabs-concat.git
