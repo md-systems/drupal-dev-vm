@@ -8,10 +8,11 @@ class {'apache':
 apache::vhost{'default':
   port => 80,
   docroot => '/vagrant/drupal',
+  override => ['ALL'],
   default_vhost => true,
   require => Vcsrepo['/vagrant/drupal'],
 }
-include apache::mod::php  
+include apache::mod::php
 
 include mysql
 include mysql::php
