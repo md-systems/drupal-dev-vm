@@ -24,6 +24,10 @@ mysql::db {'vagrant':
   password => 'vagrant',
 }
 
+package {'php-apc':
+  ensure => present,
+}
+
 package {'php5-curl':
   ensure => present,
 }
