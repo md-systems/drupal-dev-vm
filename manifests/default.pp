@@ -32,18 +32,16 @@ package {'php5-gd':
   ensure => present,
 }
 
-package {'php-pear':
-  ensure => present,
-}
-
 package {'git':
   ensure => present,
 }
 
-exec {'drush':
-  command => '/usr/bin/pear channel-discover pear.drush.org && /usr/bin/pear install drush/drush-6.0.0RC4',
-  creates => '/usr/bin/drush',
-  require => Package['php-pear'],
+include pear
+
+pear::package { 'Console_Table': }
+pear::package { 'drush':
+  version => '6.0.0RC4',
+  repository => 'pear.drush.org',
 }
 
 vcsrepo { '/vagrant/drupal':
