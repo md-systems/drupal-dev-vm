@@ -13,6 +13,7 @@ apache::vhost{'default':
   require => Vcsrepo['/vagrant/drupal'],
 }
 include apache::mod::php
+include apache::mod::rewrite
 
 include mysql
 include mysql::php
